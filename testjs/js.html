@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Xiaowei Wei</title>
+<link rel="stylesheet" href="../css/design.css">
+</head>
+<script type="text/javascript">
+    function show(event,name) {
+        document.getElementById("London").style.visibility = "visible";
+    }
+    function unShow(event,name) {
+        document.getElementById("London").style.visibility = "hidden";
+    }
+    function openCity(event,name) {
+        document.getElementById("Paris").style.visibility = "visible";
+    }
+    function colorC1(event){
+        document.getElementById(event.target.id).style.color="blue"
+    }
+    function colorB1(event){
+        document.getElementById(event.target.id).style.color="aqua"
+    }
+    function showpic(event){
+        document.getElementById('body').className="bgimg shadow";
+    }
+    function hiddenpic(event){
+        document.getElementById('body').className="bgimg";
+    }
+
+</script>
+
+  
+<body class="bgimg" id="body">
+    <h3>选项卡 - 淡入效果</h3>
+
+<div class="tab">
+  <button class="first" onmouseover="show(event, 'London')" onmouseleave="unShow(event, 'London')">London</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+</div>
+
+<div id="London" class="tabcontent" style="visibility:hidden">
+  <h3>London</h3>
+  <p>London is the capital city of England.</p>
+</div>
+
+<div id="Paris" class="tabcontent" style="visibility: hidden;">
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p> 
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <h3>Tokyo</h3>
+  <p style="color: aqua;" id = "tokyo" onmouseover="colorC1(event)" onmouseleave="colorB1(event)"> Tokyo is the capital of Japan.</p>
+</div>
+<div>
+    <p onmouseover="showpic(event,'picturebg')"onmouseleave="hiddenpic(event,'picturebg')">picture1</p>
+    </div>
+<div>
+    <p>
+    <img src="../background/backgroundtest.gif" style="opacity:0.5;position:absolute;left:1000px;top:300px;visibility:hidden;" id="picturebg" alt="background" width="500" height="400"></p>
+</div>
+
+</body>
+</html>

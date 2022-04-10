@@ -3,11 +3,97 @@
 <head>
 <meta charset="utf-8">
 <title>Portfolio Xiaowei WeiS</title>
+<link rel="stylesheet" href="css/design.css">
 </head>
-<body>
+<script type="text/javascript">
+    function Show(event,name) {
+        document.getElementById(name).style.visibility = "visible";
+    }
+    function unShow(event,name) {
+        document.getElementById(name).style.visibility = "hidden";
+    }
+    function openCity(event,name) {
+        document.getElementById("Paris").style.visibility = "visible";
+    }
+    function colorBefore(event){
 
-<img src="images/yecha.png" width="1000" height="1000" />
-<a href="index-picture1.html">链接到静物场景</a>
+        
+        var id = event.target.id;
+        
+        if (id == "bottle") {
+            Show(event,"P1Bottle");
+            document.getElementById(event.target.id).style.color="blue"
+        } else if (id == "industry") {
+            Show(event,"P1Industry");
+            document.getElementById(event.target.id).style.color="blue"
+        } else if (id == "motion") {
+            Show(event,"P1motion");
+            document.getElementById(event.target.id).style.color="blue"
+        } else if(id=="other"){
+            Show(event,"P1else");
+            document.getElementById(event.target.id).style.color="blue"
+        }
+        else{
 
+            document.getElementById(event.target.id).style.color="blue"
+        }
+       }
+
+
+
+    function colorAfter(event){
+        
+        var id = event.target.id
+        document.getElementById(event.target.id).style.color="black"
+        if (id == "bottle") {
+            unShow(event,"P1Bottle");
+        } else if (id == "industry") {
+            unShow(event,"P1Industry");
+        } else if (id == "motion") {
+            unShow(event,"P1motion");
+        } else if(id=="other"){
+            unShow(event,"P1else");
+        }
+        else{}
+       }
+    function showpic(event){
+        document.getElementById('body').className="bgimg shadow";
+    }
+    function hiddenpic(event){
+        document.getElementById('body').className="bgimg";
+    }
+
+</script>
+
+<body class="bgimg" id="body">
+
+
+    <p>
+        <a href="CV.html" style="position:absolute;left:40px;top: 510px; font-size: 70px; font-family:微软雅黑;text-decoration:none;color:black;" id="bottle" onmouseover="colorBefore(event)" onmouseleave="colorAfter(event)">瓶型设计 </a> 
+        </p>
+
+    <p >
+    <a href="CV.html" style="position:absolute;left:40px;top: 590px; font-size: 70px; font-family:微软雅黑; text-decoration:none;color:black;" id="industry" onmouseover="colorBefore(event)" onmouseleave="colorAfter(event)" >工业设计 </a>
+</p>
+
+    <p>
+        <a href="CV.html"style="position:absolute;left:40px;top: 670px; font-size: 70px; font-family:微软雅黑; text-decoration:none;color:black;" id="motion" onmouseover="colorBefore(event)" onmouseleave="colorAfter(event)" >动效设计 </a>
+        </p>
+
+
+    <p>
+
+        <a href="CV.html" style="position:absolute;left:40px;top: 750px; font-size: 70px; font-family:微软雅黑;text-decoration:none;color:black;" id="other" onmouseover="colorBefore(event)" onmouseleave="colorAfter(event)">其他 </a>
+</p>
+
+    <p style="position:absolute;left: 1600px;top: 10px; font-size: 70px; font-family:微软雅黑">Menu</p>
+
+    <p>
+        <a href="CV.html" style="position:absolute;left: 1600px;top: 670px; font-size: 70px; font-family:微软雅黑;text-decoration:none;color:black;"id="CV" onmouseover="colorBefore(event)" onmouseleave="colorAfter(event)">CV </a>
+        </p>
+    <img src="images/P1Bottle.jpg" style="opacity:0.5;position:absolute;left:1000px;top:300px;visibility:hidden;" id="P1Bottle" width="210" height="297" />
+    <img src="images/P1Industry.jpg" style="opacity:0.5;position:absolute;left:1000px;top:300px;visibility:hidden;" id="P1Industry" width="210" height="297" />
+    <img src="images/P1motion.jpg" style="opacity:0.5;position:absolute;left:1000px;top:300px;visibility:hidden;" id="P1motion" width="210" height="297" />
+    <img src="images/P1else.jpg" style="opacity:0.5;position:absolute;left:1000px;top:300px;visibility:hidden;" id="P1else" width="210" height="297" />
 </body>
 </html>
